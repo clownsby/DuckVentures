@@ -337,14 +337,14 @@ const MEDIA_DATA = {
       author: "Simon Sinek", 
       desc: "Inspiring action through purpose.",
       link: "https://simonsinek.com/books/start-with-why/",
-      image: "https://covers.openlibrary.org/b/isbn/9780241958223-M.jpg"
+      image: "https://covers.openlibrary.org/b/isbn/9781591846444-M.jpg"
     },
     { 
       title: "Creative Confidence", 
       author: "Tom & David Kelley", 
       desc: "Unleashing creativity.",
       link: "https://www.creativeconfidence.com/",
-      image: "https://covers.openlibrary.org/b/isbn/9780007517978-M.jpg"
+      image: "https://covers.openlibrary.org/b/isbn/9780385349369-M.jpg"
     },
     { 
       title: "The E-Myth Revisited", 
@@ -861,7 +861,7 @@ const ResourceHub = () => {
 
 const LearningLibrary = () => {
   return (
-    <div className="max-w-[1600px] mx-auto px-4 py-12 w-full">
+    <div className="max-w-6xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-[#154733] mb-4">Learning Library</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
