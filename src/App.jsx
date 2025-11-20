@@ -23,7 +23,8 @@ import {
   Headphones,
   Video,
   Library,
-  Mail
+  Mail,
+  ImageOff
 } from 'lucide-react';
 
 // --- Data & Content ---
@@ -302,6 +303,7 @@ const RESOURCES_DATA = {
   ]
 };
 
+// Using Specific Open Library IDs (OLID) for maximum reliability
 const MEDIA_DATA = {
   books: [
     { 
@@ -309,7 +311,7 @@ const MEDIA_DATA = {
       author: "Eric Ries", 
       desc: "Rapid iteration and learning.",
       link: "http://theleanstartup.com/book",
-      image: "https://covers.openlibrary.org/b/isbn/9780307887894-M.jpg"
+      image: "https://covers.openlibrary.org/b/olid/OL24982481M-M.jpg"
     },
     { 
       title: "Zero to One", 
@@ -323,7 +325,7 @@ const MEDIA_DATA = {
       author: "Ben Horowitz", 
       desc: "Practical advice on struggle.",
       link: "https://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205",
-      image: "https://covers.openlibrary.org/b/isbn/9780062273208-M.jpg"
+      image: "https://covers.openlibrary.org/b/olid/OL25444822M-M.jpg"
     },
     { 
       title: "Shoe Dog", 
@@ -337,7 +339,7 @@ const MEDIA_DATA = {
       author: "Simon Sinek", 
       desc: "Inspiring action through purpose.",
       link: "https://simonsinek.com/books/start-with-why/",
-      image: "https://covers.openlibrary.org/b/isbn/9781591846444-M.jpg"
+      image: "https://covers.openlibrary.org/b/olid/OL26431670M-M.jpg"
     },
     { 
       title: "Creative Confidence", 
@@ -358,7 +360,7 @@ const MEDIA_DATA = {
       author: "Guy Raz", 
       desc: "The unexpected paths to success from the world's most inspiring entrepreneurs.",
       link: "https://www.amazon.com/How-Built-This-Unexpected-Entrepreneurs/dp/0358216761",
-      image: "https://covers.openlibrary.org/b/isbn/9780358216766-M.jpg"
+      image: "https://covers.openlibrary.org/b/olid/OL32463432M-M.jpg"
     }
   ],
   podcasts: [
@@ -888,22 +890,27 @@ const LearningLibrary = () => {
                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#154733] z-10 bg-white rounded-full p-1 shadow-md">
                    <ExternalLink className="w-4 h-4" />
                 </div>
-                <div className="h-48 mb-4 flex items-center justify-center bg-gray-50 rounded-lg overflow-hidden">
+                <div className="h-48 mb-4 flex items-center justify-center bg-gray-50 rounded-lg overflow-hidden relative">
+                   {/* Book Cover Image with Error Handling */}
                   <img 
                     src={book.image} 
                     alt={book.title}
                     className="h-full w-auto object-contain shadow-md group-hover:scale-105 transition-transform duration-300"
+                    referrerPolicy="no-referrer"
                     onError={(e) => {
-                      e.target.onerror = null; 
-                      e.target.style.display = 'none'; 
+                      e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';
                     }}
                   />
-                  <div className="hidden w-full h-full flex items-center justify-center text-gray-300 bg-gray-100">
-                    <BookOpen className="w-12 h-12" />
+                  {/* Fallback Placeholder (Hidden by default, shown on error) */}
+                  <div className="hidden absolute inset-0 w-full h-full flex-col items-center justify-center text-gray-400 bg-gray-100 p-4 text-center">
+                    <div className="bg-[#154733]/10 p-2 rounded-full mb-2">
+                      <BookOpen className="w-6 h-6 text-[#154733]/40" />
+                    </div>
+                    <span className="text-[10px] font-bold text-gray-500 leading-tight line-clamp-3 uppercase tracking-wider">{book.title}</span>
                   </div>
                 </div>
-                <h4 className="font-bold text-gray-900 leading-tight mb-1 group-hover:text-[#154733] transition-colors line-clamp-1">{book.title}</h4>
+                <h4 className="font-bold text-gray-900 leading-tight mb-1 group-hover:text-[#154733] transition-colors line-clamp-2 text-sm">{book.title}</h4>
                 <p className="text-xs text-[#154733] font-medium mb-2">{book.author}</p>
                 <p className="text-xs text-gray-500 line-clamp-2">{book.desc}</p>
               </a>
