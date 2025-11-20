@@ -573,7 +573,7 @@ const Roadmap = () => {
   const [expandedStep, setExpandedStep] = useState(1);
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12">
+    <div className="max-w-[1600px] mx-auto px-4 py-12">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-[#154733] mb-4">The Duck Map</h2>
         <p className="text-gray-600">A step-by-step guide to launching your business in Oregon.</p>
