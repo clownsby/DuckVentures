@@ -23,7 +23,8 @@ import {
   Headphones,
   Video,
   Library,
-  Mail
+  Mail,
+  ImageOff
 } from 'lucide-react';
 
 // --- Data & Content ---
@@ -83,10 +84,11 @@ const STEPS_DATA = [
 const RESOURCES_DATA = {
   campus: [
     {
-      name: "Craig Wiroll - Pathway Specialist",
+      name: "Craig Wiroll - DuckVentures Manager",
       desc: "Career Readiness Coach at the University Career Center. Reach out for guidance.",
       location: "University Career Center",
-      link: "mailto:cwiroll@uoregon.edu",
+      link: "https://career.uoregon.edu/node/207",
+      email: "cwiroll@uoregon.edu",
       type: "Contact"
     },
     {
@@ -107,7 +109,7 @@ const RESOURCES_DATA = {
       name: "Oregon Innovation Challenge (OIC)",
       desc: "Flagship incubator program open to all majors. Workshops, mentorship, and up to $10k funding.",
       location: "Campus Wide",
-      link: "https://www.uoic.org/",
+      link: "https://business.uoregon.edu/hands-on-learning/competitions/oregon-innovation-challenge",
       type: "Competition"
     },
     {
@@ -308,56 +310,56 @@ const MEDIA_DATA = {
       author: "Eric Ries", 
       desc: "Rapid iteration and learning.",
       link: "http://theleanstartup.com/book",
-      image: "https://covers.openlibrary.org/b/isbn/9780307887894-M.jpg"
+      image: "https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg"
     },
     { 
       title: "Zero to One", 
       author: "Peter Thiel", 
       desc: "Building unique companies.",
       link: "https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296",
-      image: "https://covers.openlibrary.org/b/isbn/9780804139298-M.jpg"
+      image: "https://images-na.ssl-images-amazon.com/images/I/71uAI28kJuL.jpg"
     },
     { 
       title: "The Hard Thing About Hard Things", 
       author: "Ben Horowitz", 
       desc: "Practical advice on struggle.",
       link: "https://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205",
-      image: "https://covers.openlibrary.org/b/isbn/9780062273208-M.jpg"
+      image: "https://images-na.ssl-images-amazon.com/images/I/810u9MKYXZL.jpg"
     },
     { 
       title: "Shoe Dog", 
       author: "Phil Knight", 
       desc: "Memoir of Nike's UO alum founder.",
       link: "https://www.simonandschuster.com/books/Shoe-Dog/Phil-Knight/9781501135927",
-      image: "https://covers.openlibrary.org/b/isbn/9781501135910-M.jpg"
+      image: "https://images-na.ssl-images-amazon.com/images/I/6125K6+CpwL.jpg"
     },
     { 
       title: "Start with Why", 
       author: "Simon Sinek", 
       desc: "Inspiring action through purpose.",
       link: "https://simonsinek.com/books/start-with-why/",
-      image: "https://covers.openlibrary.org/b/isbn/9780241958223-M.jpg"
+      image: "https://images-na.ssl-images-amazon.com/images/I/71qc3aA1m5L.jpg"
     },
     { 
       title: "Creative Confidence", 
       author: "Tom & David Kelley", 
       desc: "Unleashing creativity.",
       link: "https://www.creativeconfidence.com/",
-      image: "https://covers.openlibrary.org/b/isbn/9780007517978-M.jpg"
+      image: "https://images-na.ssl-images-amazon.com/images/I/71U325d0WpL.jpg"
     },
     { 
       title: "The E-Myth Revisited", 
       author: "Michael E. Gerber", 
       desc: "Why most small businesses fail.",
       link: "https://emyth.com/",
-      image: "https://covers.openlibrary.org/b/isbn/9780887307287-M.jpg"
+      image: "https://images-na.ssl-images-amazon.com/images/I/51011js-11L.jpg"
     },
     { 
       title: "How I Built This", 
       author: "Guy Raz", 
       desc: "The unexpected paths to success from the world's most inspiring entrepreneurs.",
       link: "https://www.amazon.com/How-Built-This-Unexpected-Entrepreneurs/dp/0358216761",
-      image: "https://covers.openlibrary.org/b/isbn/9780358216766-M.jpg"
+      image: "https://images-na.ssl-images-amazon.com/images/I/81mXQ-h6BwL.jpg"
     }
   ],
   podcasts: [
@@ -365,25 +367,29 @@ const MEDIA_DATA = {
       title: "How I Built This", 
       author: "Guy Raz", 
       desc: "Stories behind the world's best companies.",
-      link: "https://www.npr.org/series/490248027/how-i-built-this"
+      link: "https://www.npr.org/series/490248027/how-i-built-this",
+      image: "https://media.npr.org/assets/img/2022/11/01/hibt-tile_sq-0f3595254800f6d6583707192643430651839242.jpg"
     },
     { 
       title: "StartUp", 
       author: "Gimlet Media", 
       desc: "A series about what it's really like to get a business off the ground.",
-      link: "https://open.spotify.com/show/5C669Dwd3Wl36YJ9oZk7x9"
+      link: "https://open.spotify.com/show/5C669Dwd3Wl36YJ9oZk7x9",
+      image: "https://upload.wikimedia.org/wikipedia/en/6/6a/StartUp_Podcast_Logo.jpg"
     },
     { 
       title: "The Tim Ferriss Show", 
       author: "Tim Ferriss", 
       desc: "Deconstructing world-class performers.",
-      link: "https://tim.blog/podcast/"
+      link: "https://tim.blog/podcast/",
+      image: "https://tim.blog/wp-content/uploads/2018/07/tim_ferriss_show_art_1400x1400.jpg"
     },
     { 
       title: "Financial Wellness", 
       author: "UO Financial Aid", 
       desc: "Becoming Your Own Boss.",
-      link: "https://financialaid.uoregon.edu/financial_wellness"
+      link: "https://financialaid.uoregon.edu/financial_wellness",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/University_of_Oregon_logo.svg/1024px-University_of_Oregon_logo.svg.png"
     }
   ],
   videos: [
@@ -391,30 +397,47 @@ const MEDIA_DATA = {
       title: "How to Build Creative Confidence", 
       author: "David Kelley", 
       desc: "TED Talk",
-      link: "https://www.ted.com/talks/david_kelley_how_to_build_your_creative_confidence"
+      link: "https://www.ted.com/talks/david_kelley_how_to_build_your_creative_confidence",
+      image: "https://img.youtube.com/vi/16p9YRF0l-g/hqdefault.jpg"
     },
     { 
       title: "How Great Leaders Inspire Action", 
       author: "Simon Sinek", 
       desc: "TED Talk",
-      link: "https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action"
+      link: "https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action",
+      image: "https://img.youtube.com/vi/qp0HIF3SfI4/hqdefault.jpg"
     },
     { 
       title: "The Power of Vulnerability", 
       author: "Brené Brown", 
       desc: "TED Talk",
-      link: "https://www.ted.com/talks/brene_brown_the_power_of_vulnerability"
+      link: "https://www.ted.com/talks/brene_brown_the_power_of_vulnerability",
+      image: "https://img.youtube.com/vi/iCvmsMzlF7o/hqdefault.jpg"
     },
     { 
       title: "The Single Biggest Reason Startups Succeed", 
       author: "Bill Gross", 
       desc: "TED Talk",
-      link: "https://www.ted.com/talks/bill_gross_the_single_biggest_reason_why_startups_succeed"
+      link: "https://www.ted.com/talks/bill_gross_the_single_biggest_reason_why_startups_succeed",
+      image: "https://img.youtube.com/vi/bNpx7gpSqbY/hqdefault.jpg"
     }
   ]
 };
 
 // --- Components ---
+
+const GlobalStyles = () => (
+  <style>{`
+    html, body, #root {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100% !important;
+      min-width: 100% !important;
+      text-align: left !important;
+    }
+  `}</style>
+);
 
 const Navigation = ({ activeTab, setActiveTab, isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const navItems = [
@@ -426,8 +449,8 @@ const Navigation = ({ activeTab, setActiveTab, isMobileMenuOpen, setIsMobileMenu
   ];
 
   return (
-    <nav className="bg-[#154733] text-white shadow-lg sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4">
+    <nav className="bg-[#154733] text-white shadow-lg sticky top-0 z-50 w-full">
+      <div className="max-w-[1600px] mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2 font-bold text-xl tracking-tight cursor-pointer" onClick={() => setActiveTab('home')}>
@@ -496,8 +519,8 @@ const Navigation = ({ activeTab, setActiveTab, isMobileMenuOpen, setIsMobileMenu
 };
 
 const Hero = ({ setActiveTab }) => (
-  <div className="bg-gradient-to-b from-[#F4F9F6] to-white min-h-[85vh] flex items-center">
-    <div className="max-w-6xl mx-auto px-4 py-12 md:py-20">
+  <div className="bg-gradient-to-b from-[#F4F9F6] to-white min-h-[85vh] flex items-center w-full">
+    <div className="max-w-[1600px] mx-auto px-4 py-12 md:py-20 w-full">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#E8F5E9] text-[#154733] text-sm font-medium border border-[#154733]/20">
@@ -573,13 +596,13 @@ const Roadmap = () => {
   const [expandedStep, setExpandedStep] = useState(1);
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
+    <div className="max-w-[1600px] mx-auto px-4 py-12 w-full">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-[#154733] mb-4">The Duck Map</h2>
         <p className="text-gray-600">A step-by-step guide to launching your business in Oregon.</p>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-6 max-w-5xl mx-auto">
         {STEPS_DATA.map((step) => (
           <div 
             key={step.id} 
@@ -663,7 +686,7 @@ const IdeaLab = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <div className="max-w-[1600px] mx-auto px-4 py-12 w-full">
       <div className="grid lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1 space-y-6">
           <div className="bg-[#154733] text-white p-6 rounded-xl shadow-lg">
@@ -766,7 +789,7 @@ const ResourceHub = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <div className="max-w-[1600px] mx-auto px-4 py-12 w-full">
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold text-[#154733] mb-4">Resource Directory</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
@@ -800,9 +823,18 @@ const ResourceHub = () => {
               }`}>
                 {item.type}
               </span>
-              <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#154733]">
-                {item.type === 'Contact' ? <Mail className="w-5 h-5" /> : <ExternalLink className="w-5 h-5" />}
-              </a>
+              <div className="flex space-x-3">
+                {item.email && (
+                  <a href={`mailto:${item.email}`} className="text-gray-400 hover:text-[#154733]" title="Send Email">
+                    <Mail className="w-5 h-5" />
+                  </a>
+                )}
+                {item.link && (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#154733]" title="Visit Website">
+                    <ExternalLink className="w-5 h-5" />
+                  </a>
+                )}
+              </div>
             </div>
             <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#154733] transition-colors mb-2">
               {item.name}
@@ -859,29 +891,35 @@ const LearningLibrary = () => {
                 href={book.link}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all group block relative"
+                className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all group block relative h-full flex flex-col"
               >
                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#154733] z-10 bg-white rounded-full p-1 shadow-md">
                    <ExternalLink className="w-4 h-4" />
                 </div>
-                <div className="h-48 mb-4 flex items-center justify-center bg-gray-50 rounded-lg overflow-hidden">
+                <div className="h-60 mb-4 flex items-center justify-center bg-gray-50 rounded-lg overflow-hidden relative shadow-sm">
+                   {/* Book Cover Image with Fallback */}
                   <img 
                     src={book.image} 
                     alt={book.title}
-                    className="h-full w-auto object-contain shadow-md group-hover:scale-105 transition-transform duration-300"
+                    className="h-full w-auto object-contain"
                     onError={(e) => {
-                      e.target.onerror = null; 
-                      e.target.style.display = 'none'; 
+                      e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';
                     }}
                   />
-                  <div className="hidden w-full h-full flex items-center justify-center text-gray-300 bg-gray-100">
-                    <BookOpen className="w-12 h-12" />
+                  {/* Fallback Placeholder */}
+                  <div className="hidden absolute inset-0 w-full h-full flex-col items-center justify-center text-gray-400 bg-gray-100 p-4 text-center">
+                    <div className="bg-[#154733]/10 p-2 rounded-full mb-2">
+                      <BookOpen className="w-6 h-6 text-[#154733]/40" />
+                    </div>
+                    <span className="text-[10px] font-bold text-gray-500 leading-tight line-clamp-3 uppercase tracking-wider">{book.title}</span>
                   </div>
                 </div>
-                <h4 className="font-bold text-gray-900 leading-tight mb-1 group-hover:text-[#154733] transition-colors line-clamp-1">{book.title}</h4>
-                <p className="text-xs text-[#154733] font-medium mb-2">{book.author}</p>
-                <p className="text-xs text-gray-500 line-clamp-2">{book.desc}</p>
+                <div className="flex-grow">
+                  <h4 className="font-bold text-gray-900 leading-tight mb-1 group-hover:text-[#154733] transition-colors text-lg">{book.title}</h4>
+                  <p className="text-xs text-[#154733] font-medium mb-2">{book.author}</p>
+                  <p className="text-xs text-gray-500 leading-relaxed line-clamp-3">{book.desc}</p>
+                </div>
               </a>
             ))}
           </div>
@@ -903,8 +941,19 @@ const LearningLibrary = () => {
                   rel="noopener noreferrer"
                   className="flex items-start bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#154733]/30 transition-all group"
                 >
-                  <div className="bg-[#FEE123] p-2 rounded-lg mr-4 text-[#154733] group-hover:scale-110 transition-transform">
-                    <Headphones className="w-5 h-5" />
+                  <div className="w-24 h-24 mr-4 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100 relative shadow-md">
+                    <img 
+                      src={pod.image}
+                      alt={pod.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="hidden absolute inset-0 w-full h-full items-center justify-center bg-gray-200 text-gray-400">
+                       <Headphones className="w-8 h-8" />
+                    </div>
                   </div>
                   <div className="flex-grow">
                     <div className="flex justify-between items-start">
@@ -912,7 +961,7 @@ const LearningLibrary = () => {
                       <ExternalLink className="w-3 h-3 text-gray-300 group-hover:text-[#154733]" />
                     </div>
                     <p className="text-xs text-gray-500 mt-1">{pod.author}</p>
-                    <p className="text-xs text-gray-600 mt-1">{pod.desc}</p>
+                    <p className="text-xs text-gray-600 mt-1 leading-snug">{pod.desc}</p>
                   </div>
                 </a>
               ))}
@@ -934,16 +983,32 @@ const LearningLibrary = () => {
                   rel="noopener noreferrer"
                   className="flex items-start bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-red-200 transition-all group"
                 >
-                  <div className="bg-red-50 p-2 rounded-lg mr-4 text-red-500 group-hover:scale-110 transition-transform">
-                    <Video className="w-5 h-5" />
+                  <div className="w-24 h-16 mr-4 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100 relative shadow-md">
+                     <img 
+                      src={vid.image}
+                      alt={vid.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="hidden absolute inset-0 w-full h-full items-center justify-center bg-red-50 text-red-300">
+                       <Video className="w-6 h-6" />
+                    </div>
+                    <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-black/20">
+                       <div className="bg-red-600 rounded-lg p-1">
+                         <Video className="w-4 h-4 text-white" />
+                       </div>
+                    </div>
                   </div>
                   <div className="flex-grow">
                     <div className="flex justify-between items-start">
-                      <h4 className="font-bold text-gray-900 text-sm group-hover:text-red-600 transition-colors">{vid.title}</h4>
+                      <h4 className="font-bold text-gray-900 text-sm group-hover:text-red-600 transition-colors line-clamp-1">{vid.title}</h4>
                       <ExternalLink className="w-3 h-3 text-gray-300 group-hover:text-red-500" />
                     </div>
                     <p className="text-xs text-gray-500 mt-1">{vid.author}</p>
-                    <p className="text-xs text-gray-600 mt-1">{vid.desc}</p>
+                    <p className="text-xs text-gray-600 mt-1 leading-snug line-clamp-2">{vid.desc}</p>
                   </div>
                 </a>
               ))}
@@ -956,7 +1021,7 @@ const LearningLibrary = () => {
 };
 
 const Footer = ({ setActiveTab }) => (
-  <footer className="bg-[#154733] text-white py-12 mt-12 border-t border-[#1E6B4E]">
+  <footer className="bg-[#154733] text-white py-12 mt-12 border-t border-[#1E6B4E] w-full">
     <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8">
       <div className="col-span-2">
         <div className="flex items-center space-x-2 font-bold text-xl mb-4">
@@ -1004,7 +1069,8 @@ const App = () => {
   }, [activeTab]);
 
   return (
-    <div className="min-h-screen bg-[#F4F9F6] font-sans text-gray-900">
+    <div className="min-h-screen bg-[#F4F9F6] font-sans text-gray-900 w-full">
+      <GlobalStyles />
       <Navigation 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
@@ -1012,7 +1078,7 @@ const App = () => {
         setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
       
-      <main className="animate-fadeIn">
+      <main className="animate-fadeIn w-full">
         {activeTab === 'home' && <Hero setActiveTab={setActiveTab} />}
         {activeTab === 'roadmap' && <Roadmap />}
         {activeTab === 'idea-lab' && <IdeaLab />}
