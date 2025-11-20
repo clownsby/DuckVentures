@@ -416,6 +416,20 @@ const MEDIA_DATA = {
 
 // --- Components ---
 
+// This forces the root container to act like a normal website, not a centered card
+const GlobalStyles = () => (
+  <style>{`
+    html, body, #root {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100% !important;
+      min-width: 100% !important;
+      text-align: left !important;
+    }
+  `}</style>
+);
+
 const Navigation = ({ activeTab, setActiveTab, isMobileMenuOpen, setIsMobileMenuOpen }) => {
   const navItems = [
     { id: 'home', label: 'Home', icon: <Rocket className="w-4 h-4" /> },
@@ -426,7 +440,7 @@ const Navigation = ({ activeTab, setActiveTab, isMobileMenuOpen, setIsMobileMenu
   ];
 
   return (
-    <nav className="bg-[#154733] text-white shadow-lg sticky top-0 z-50">
+    <nav className="bg-[#154733] text-white shadow-lg sticky top-0 z-50 w-full">
       <div className="max-w-[1600px] mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -496,8 +510,8 @@ const Navigation = ({ activeTab, setActiveTab, isMobileMenuOpen, setIsMobileMenu
 };
 
 const Hero = ({ setActiveTab }) => (
-  <div className="bg-gradient-to-b from-[#F4F9F6] to-white min-h-[85vh] flex items-center">
-    <div className="max-w-[1600px] mx-auto px-4 py-12 md:py-20">
+  <div className="bg-gradient-to-b from-[#F4F9F6] to-white min-h-[85vh] flex items-center w-full">
+    <div className="max-w-[1600px] mx-auto px-4 py-12 md:py-20 w-full">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#E8F5E9] text-[#154733] text-sm font-medium border border-[#154733]/20">
@@ -573,13 +587,13 @@ const Roadmap = () => {
   const [expandedStep, setExpandedStep] = useState(1);
 
   return (
-    <div className="max-w-[1600px] mx-auto px-4 py-12">
+    <div className="max-w-[1600px] mx-auto px-4 py-12 w-full">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-[#154733] mb-4">The Duck Map</h2>
         <p className="text-gray-600">A step-by-step guide to launching your business in Oregon.</p>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-6 max-w-5xl mx-auto">
         {STEPS_DATA.map((step) => (
           <div 
             key={step.id} 
@@ -663,7 +677,7 @@ const IdeaLab = () => {
   };
 
   return (
-    <div className="max-w-[1600px] mx-auto px-4 py-12">
+    <div className="max-w-[1600px] mx-auto px-4 py-12 w-full">
       <div className="grid lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1 space-y-6">
           <div className="bg-[#154733] text-white p-6 rounded-xl shadow-lg">
@@ -766,7 +780,7 @@ const ResourceHub = () => {
   ];
 
   return (
-    <div className="max-w-[1600px] mx-auto px-4 py-12">
+    <div className="max-w-[1600px] mx-auto px-4 py-12 w-full">
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold text-[#154733] mb-4">Resource Directory</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
@@ -837,7 +851,7 @@ const ResourceHub = () => {
 
 const LearningLibrary = () => {
   return (
-    <div className="max-w-[1600px] mx-auto px-4 py-12">
+    <div className="max-w-[1600px] mx-auto px-4 py-12 w-full">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-[#154733] mb-4">Learning Library</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
@@ -956,7 +970,7 @@ const LearningLibrary = () => {
 };
 
 const Footer = ({ setActiveTab }) => (
-  <footer className="bg-[#154733] text-white py-12 mt-12 border-t border-[#1E6B4E]">
+  <footer className="bg-[#154733] text-white py-12 mt-12 border-t border-[#1E6B4E] w-full">
     <div className="max-w-[1600px] mx-auto px-4 grid md:grid-cols-4 gap-8">
       <div className="col-span-2">
         <div className="flex items-center space-x-2 font-bold text-xl mb-4">
@@ -1004,7 +1018,8 @@ const App = () => {
   }, [activeTab]);
 
   return (
-    <div className="min-h-screen bg-[#F4F9F6] font-sans text-gray-900">
+    <div className="min-h-screen bg-[#F4F9F6] font-sans text-gray-900 w-full">
+      <GlobalStyles />
       <Navigation 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
@@ -1012,7 +1027,7 @@ const App = () => {
         setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
       
-      <main className="animate-fadeIn">
+      <main className="animate-fadeIn w-full">
         {activeTab === 'home' && <Hero setActiveTab={setActiveTab} />}
         {activeTab === 'roadmap' && <Roadmap />}
         {activeTab === 'idea-lab' && <IdeaLab />}
