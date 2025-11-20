@@ -83,10 +83,11 @@ const STEPS_DATA = [
 const RESOURCES_DATA = {
   campus: [
     {
-      name: "Craig Wiroll - Pathway Specialist",
+      name: "Craig Wiroll - DuckVentures Manager",
       desc: "Career Readiness Coach at the University Career Center. Reach out for guidance.",
       location: "University Career Center",
-      link: "mailto:cwiroll@uoregon.edu",
+      link: "https://career.uoregon.edu/node/207",
+      email: "cwiroll@uoregon.edu",
       type: "Contact"
     },
     {
@@ -107,7 +108,7 @@ const RESOURCES_DATA = {
       name: "Oregon Innovation Challenge (OIC)",
       desc: "Flagship incubator program open to all majors. Workshops, mentorship, and up to $10k funding.",
       location: "Campus Wide",
-      link: "https://www.uoic.org/",
+      link: "https://business.uoregon.edu/hands-on-learning/competitions/oregon-innovation-challenge",
       type: "Competition"
     },
     {
@@ -814,9 +815,18 @@ const ResourceHub = () => {
               }`}>
                 {item.type}
               </span>
-              <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#154733]">
-                {item.type === 'Contact' ? <Mail className="w-5 h-5" /> : <ExternalLink className="w-5 h-5" />}
-              </a>
+              <div className="flex space-x-3">
+                {item.email && (
+                  <a href={`mailto:${item.email}`} className="text-gray-400 hover:text-[#154733]" title="Send Email">
+                    <Mail className="w-5 h-5" />
+                  </a>
+                )}
+                {item.link && (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#154733]" title="Visit Website">
+                    <ExternalLink className="w-5 h-5" />
+                  </a>
+                )}
+              </div>
             </div>
             <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#154733] transition-colors mb-2">
               {item.name}
