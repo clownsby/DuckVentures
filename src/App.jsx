@@ -23,7 +23,8 @@ import {
   Headphones,
   Video,
   Library,
-  Mail
+  Mail,
+  ImageOff
 } from 'lucide-react';
 
 // --- Data & Content ---
@@ -308,49 +309,57 @@ const MEDIA_DATA = {
       title: "The Lean Startup", 
       author: "Eric Ries", 
       desc: "Rapid iteration and learning.",
-      link: "http://theleanstartup.com/book"
+      link: "http://theleanstartup.com/book",
+      image: "https://covers.openlibrary.org/b/olid/OL24982481M-M.jpg"
     },
     { 
       title: "Zero to One", 
       author: "Peter Thiel", 
       desc: "Building unique companies.",
-      link: "https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296"
+      link: "https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296",
+      image: "https://covers.openlibrary.org/b/isbn/9780804139298-M.jpg"
     },
     { 
       title: "The Hard Thing About Hard Things", 
       author: "Ben Horowitz", 
       desc: "Practical advice on struggle.",
-      link: "https://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205"
+      link: "https://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205",
+      image: "https://covers.openlibrary.org/b/olid/OL25444822M-M.jpg"
     },
     { 
       title: "Shoe Dog", 
       author: "Phil Knight", 
       desc: "Memoir of Nike's UO alum founder.",
-      link: "https://www.simonandschuster.com/books/Shoe-Dog/Phil-Knight/9781501135927"
+      link: "https://www.simonandschuster.com/books/Shoe-Dog/Phil-Knight/9781501135927",
+      image: "https://covers.openlibrary.org/b/isbn/9781501135910-M.jpg"
     },
     { 
       title: "Start with Why", 
       author: "Simon Sinek", 
       desc: "Inspiring action through purpose.",
-      link: "https://simonsinek.com/books/start-with-why/"
+      link: "https://simonsinek.com/books/start-with-why/",
+      image: "https://covers.openlibrary.org/b/olid/OL26431670M-M.jpg"
     },
     { 
       title: "Creative Confidence", 
       author: "Tom & David Kelley", 
       desc: "Unleashing creativity.",
-      link: "https://www.creativeconfidence.com/"
+      link: "https://www.creativeconfidence.com/",
+      image: "https://covers.openlibrary.org/b/isbn/9780385349369-M.jpg"
     },
     { 
       title: "The E-Myth Revisited", 
       author: "Michael E. Gerber", 
       desc: "Why most small businesses fail.",
-      link: "https://emyth.com/"
+      link: "https://emyth.com/",
+      image: "https://covers.openlibrary.org/b/isbn/9780887307287-M.jpg"
     },
     { 
       title: "How I Built This", 
       author: "Guy Raz", 
       desc: "The unexpected paths to success from the world's most inspiring entrepreneurs.",
-      link: "https://www.amazon.com/How-Built-This-Unexpected-Entrepreneurs/dp/0358216761"
+      link: "https://www.amazon.com/How-Built-This-Unexpected-Entrepreneurs/dp/0358216761",
+      image: "https://covers.openlibrary.org/b/olid/OL32463432M-M.jpg"
     }
   ],
   podcasts: [
@@ -880,10 +889,31 @@ const LearningLibrary = () => {
                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#154733] z-10 bg-white rounded-full p-1 shadow-md">
                    <ExternalLink className="w-4 h-4" />
                 </div>
+                <div className="h-60 mb-4 flex items-center justify-center bg-gray-50 rounded-lg overflow-hidden relative shadow-sm">
+                   {/* Book Cover Image with Error Handling */}
+                  <img 
+                    src={book.image} 
+                    alt={book.title}
+                    className="h-full w-auto object-contain shadow-md group-hover:scale-105 transition-transform duration-300"
+                    referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      // Hide the broken image and show the fallback div
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  {/* Fallback Placeholder (Hidden by default, shown on error) */}
+                  <div className="hidden absolute inset-0 w-full h-full flex-col items-center justify-center text-gray-400 bg-gray-100 p-4 text-center">
+                    <div className="bg-[#154733]/10 p-2 rounded-full mb-2">
+                      <BookOpen className="w-6 h-6 text-[#154733]/40" />
+                    </div>
+                    <span className="text-[10px] font-bold text-gray-500 leading-tight line-clamp-3 uppercase tracking-wider">{book.title}</span>
+                  </div>
+                </div>
                 <div className="flex-grow">
                   <h4 className="font-bold text-gray-900 leading-tight mb-1 group-hover:text-[#154733] transition-colors text-lg">{book.title}</h4>
                   <p className="text-xs text-[#154733] font-medium mb-2">{book.author}</p>
-                  <p className="text-xs text-gray-500 leading-relaxed">{book.desc}</p>
+                  <p className="text-xs text-gray-500 leading-relaxed line-clamp-3">{book.desc}</p>
                 </div>
               </a>
             ))}
