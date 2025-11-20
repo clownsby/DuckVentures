@@ -427,7 +427,7 @@ const Navigation = ({ activeTab, setActiveTab, isMobileMenuOpen, setIsMobileMenu
 
   return (
     <nav className="bg-[#154733] text-white shadow-lg sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-[1600px] mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2 font-bold text-xl tracking-tight cursor-pointer" onClick={() => setActiveTab('home')}>
@@ -497,7 +497,7 @@ const Navigation = ({ activeTab, setActiveTab, isMobileMenuOpen, setIsMobileMenu
 
 const Hero = ({ setActiveTab }) => (
   <div className="bg-gradient-to-b from-[#F4F9F6] to-white min-h-[85vh] flex items-center">
-    <div className="max-w-6xl mx-auto px-4 py-12 md:py-20">
+    <div className="max-w-[1600px] mx-auto px-4 py-12 md:py-20">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#E8F5E9] text-[#154733] text-sm font-medium border border-[#154733]/20">
@@ -573,7 +573,7 @@ const Roadmap = () => {
   const [expandedStep, setExpandedStep] = useState(1);
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
+    <div className="max-w-6xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-[#154733] mb-4">The Duck Map</h2>
         <p className="text-gray-600">A step-by-step guide to launching your business in Oregon.</p>
@@ -663,7 +663,7 @@ const IdeaLab = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <div className="max-w-[1600px] mx-auto px-4 py-12">
       <div className="grid lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1 space-y-6">
           <div className="bg-[#154733] text-white p-6 rounded-xl shadow-lg">
@@ -766,7 +766,7 @@ const ResourceHub = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <div className="max-w-[1600px] mx-auto px-4 py-12">
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold text-[#154733] mb-4">Resource Directory</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
@@ -837,7 +837,7 @@ const ResourceHub = () => {
 
 const LearningLibrary = () => {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <div className="max-w-[1600px] mx-auto px-4 py-12">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-[#154733] mb-4">Learning Library</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
@@ -957,7 +957,7 @@ const LearningLibrary = () => {
 
 const Footer = ({ setActiveTab }) => (
   <footer className="bg-[#154733] text-white py-12 mt-12 border-t border-[#1E6B4E]">
-    <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8">
+    <div className="max-w-[1600px] mx-auto px-4 grid md:grid-cols-4 gap-8">
       <div className="col-span-2">
         <div className="flex items-center space-x-2 font-bold text-xl mb-4">
           <div className="bg-[#FEE123] text-[#154733] p-1 rounded">
@@ -986,7 +986,7 @@ const Footer = ({ setActiveTab }) => (
         </ul>
       </div>
     </div>
-    <div className="max-w-6xl mx-auto px-4 mt-12 pt-8 border-t border-[#1E6B4E] text-center text-xs text-green-100/40">
+    <div className="max-w-[1600px] mx-auto px-4 mt-12 pt-8 border-t border-[#1E6B4E] text-center text-xs text-green-100/40">
       <p>© {new Date().getFullYear()} DuckVentures. Not officially affiliated with the University of Oregon.</p>
     </div>
   </footer>
