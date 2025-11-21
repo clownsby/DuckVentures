@@ -308,56 +308,56 @@ const MEDIA_DATA = {
     { 
       title: "The Lean Startup", 
       author: "Eric Ries", 
-      desc: "Rapid iteration and learning.",
+      desc: "Introduces the concept of applying 'lean' principles to startups, emphasizing the importance of rapid iteration and learning.",
       link: "http://theleanstartup.com/book",
       image: "https://images-na.ssl-images-amazon.com/images/I/81-QB7nDh4L.jpg"
     },
     { 
       title: "Zero to One", 
       author: "Peter Thiel", 
-      desc: "Building unique companies.",
+      desc: "Co-founder of PayPal shares insights on how to build new and unique companies that create genuine value from scratch.",
       link: "https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296",
       image: "https://images-na.ssl-images-amazon.com/images/I/71uAI28kJuL.jpg"
     },
     { 
       title: "The Hard Thing About Hard Things", 
       author: "Ben Horowitz", 
-      desc: "Practical advice on struggle.",
+      desc: "A candid and practical guide to the challenges of running a startup, filled with raw advice from a top venture capitalist.",
       link: "https://www.amazon.com/Hard-Thing-About-Things-Building/dp/0062273205",
       image: "https://images-na.ssl-images-amazon.com/images/I/810u9MKYXZL.jpg"
     },
     { 
       title: "Shoe Dog", 
       author: "Phil Knight", 
-      desc: "Memoir of Nike's UO alum founder.",
+      desc: "The memoir of Nike's founder offers an inspiring look at the chaotic early days of building a global brand in Oregon.",
       link: "https://www.simonandschuster.com/books/Shoe-Dog/Phil-Knight/9781501135927",
       image: "https://images-na.ssl-images-amazon.com/images/I/6125K6+CpwL.jpg"
     },
     { 
       title: "Start with Why", 
       author: "Simon Sinek", 
-      desc: "Inspiring action through purpose.",
+      desc: "Explores how great leaders inspire action by focusing on their purpose, or 'why,' before their products or services.",
       link: "https://simonsinek.com/books/start-with-why/",
       image: "https://images-na.ssl-images-amazon.com/images/I/71qc3aA1m5L.jpg"
     },
     { 
       title: "Creative Confidence", 
       author: "Tom & David Kelley", 
-      desc: "Unleashing creativity.",
+      desc: "The founders of IDEO argue that everyone is naturally creative and that 'creative confidence' can be developed.",
       link: "https://www.creativeconfidence.com/",
       image: "https://images-na.ssl-images-amazon.com/images/I/71U325d0WpL.jpg"
     },
     { 
       title: "The E-Myth Revisited", 
       author: "Michael E. Gerber", 
-      desc: "Why most small businesses fail.",
+      desc: "Challenges the myth that being a good technician makes you a good business owner, highlighting the need for systems.",
       link: "https://emyth.com/",
       image: "https://images-na.ssl-images-amazon.com/images/I/51011js-11L.jpg"
     },
     { 
       title: "How I Built This", 
       author: "Guy Raz", 
-      desc: "The unexpected paths to success from the world's most inspiring entrepreneurs.",
+      desc: "Based on the NPR podcast, this book offers insights from the world's top entrepreneurs on how to start and launch.",
       link: "https://www.amazon.com/How-Built-This-Unexpected-Entrepreneurs/dp/0358216761",
       image: "https://images-na.ssl-images-amazon.com/images/I/81mXQ-h6BwL.jpg"
     }
@@ -368,7 +368,7 @@ const MEDIA_DATA = {
       author: "Guy Raz", 
       desc: "Stories behind the world's best companies.",
       link: "https://www.npr.org/series/490248027/how-i-built-this",
-      image: "https://media.npr.org/assets/img/2022/11/01/hibt-tile_sq-0f3595254800f6d6583707192643430651839242.jpg"
+      image: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Logo_PODCAST.png"
     },
     { 
       title: "StartUp", 
@@ -382,14 +382,14 @@ const MEDIA_DATA = {
       author: "Tim Ferriss", 
       desc: "Deconstructing world-class performers.",
       link: "https://tim.blog/podcast/",
-      image: "https://tim.blog/wp-content/uploads/2018/07/tim_ferriss_show_art_1400x1400.jpg"
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Tim_Ferriss.jpg/480px-Tim_Ferriss.jpg"
     },
     { 
       title: "Financial Wellness", 
       author: "UO Financial Aid", 
       desc: "Becoming Your Own Boss.",
       link: "https://financialaid.uoregon.edu/financial_wellness",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/University_of_Oregon_logo.svg/1024px-University_of_Oregon_logo.svg.png"
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/University_of_Oregon_logo.svg/640px-University_of_Oregon_logo.svg.png"
     }
   ],
   videos: [
@@ -897,17 +897,18 @@ const LearningLibrary = () => {
                    <ExternalLink className="w-4 h-4" />
                 </div>
                 <div className="h-60 mb-4 flex items-center justify-center bg-gray-50 rounded-lg overflow-hidden relative shadow-sm">
-                   {/* Book Cover Image with Fallback */}
+                   {/* Book Cover Image - Clean, no overlays */}
                   <img 
                     src={book.image} 
                     alt={book.title}
                     className="h-full w-auto object-contain"
                     onError={(e) => {
+                      // Fallback: If image fails, hide it and show the placeholder div
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';
                     }}
                   />
-                  {/* Fallback Placeholder */}
+                  {/* Fallback Placeholder (Hidden by default, shows on error) */}
                   <div className="hidden absolute inset-0 w-full h-full flex-col items-center justify-center text-gray-400 bg-gray-100 p-4 text-center">
                     <div className="bg-[#154733]/10 p-2 rounded-full mb-2">
                       <BookOpen className="w-6 h-6 text-[#154733]/40" />
@@ -983,7 +984,7 @@ const LearningLibrary = () => {
                   rel="noopener noreferrer"
                   className="flex items-start bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-red-200 transition-all group"
                 >
-                  <div className="w-24 h-16 mr-4 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100 relative shadow-md">
+                  <div className="w-24 h-24 mr-4 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100 relative shadow-md">
                      <img 
                       src={vid.image}
                       alt={vid.title}
@@ -1037,17 +1038,17 @@ const Footer = ({ setActiveTab }) => (
       <div>
         <h4 className="font-bold text-[#FEE123] mb-4">Quick Links</h4>
         <ul className="space-y-2 text-sm text-green-100/70">
-          <li><button onClick={() => setActiveTab('roadmap')} className="text-green-100/70 hover:text-white bg-transparent text-left">The Roadmap</button></li>
-          <li><button onClick={() => setActiveTab('idea-lab')} className="text-green-100/70 hover:text-white bg-transparent text-left">Idea Canvas</button></li>
-          <li><button onClick={() => setActiveTab('resources')} className="text-green-100/70 hover:text-white bg-transparent text-left">Resource Directory</button></li>
+          <li><button onClick={() => setActiveTab('roadmap')} className="hover:text-white">The Roadmap</button></li>
+          <li><button onClick={() => setActiveTab('idea-lab')} className="hover:text-white">Idea Canvas</button></li>
+          <li><button onClick={() => setActiveTab('resources')} className="hover:text-white">Resource Directory</button></li>
         </ul>
       </div>
       <div>
         <h4 className="font-bold text-[#FEE123] mb-4">External Tools</h4>
         <ul className="space-y-2 text-sm text-green-100/70">
-          <li><a href="https://sos.oregon.gov/business/" target="_blank" rel="noopener noreferrer" className="text-green-100/70 hover:text-white flex items-center transition-colors">Oregon Business Registry <ExternalLink className="w-3 h-3 ml-1"/></a></li>
-          <li><a href="https://business.uoregon.edu/directory/lce" target="_blank" rel="noopener noreferrer" className="text-green-100/70 hover:text-white flex items-center transition-colors">Lundquist Center <ExternalLink className="w-3 h-3 ml-1"/></a></li>
-          <li><a href="https://www.raincatalysts.org/" target="_blank" rel="noopener noreferrer" className="text-green-100/70 hover:text-white flex items-center transition-colors">RAIN Catalysts <ExternalLink className="w-3 h-3 ml-1"/></a></li>
+          <li><a href="https://sos.oregon.gov/business/" target="_blank" rel="noopener noreferrer" className="hover:text-white flex items-center">Oregon Business Registry <ExternalLink className="w-3 h-3 ml-1"/></a></li>
+          <li><a href="https://business.uoregon.edu/directory/lce" target="_blank" rel="noopener noreferrer" className="hover:text-white flex items-center">Lundquist Center <ExternalLink className="w-3 h-3 ml-1"/></a></li>
+          <li><a href="https://www.raincatalysts.org/" target="_blank" rel="noopener noreferrer" className="hover:text-white flex items-center">RAIN Catalysts <ExternalLink className="w-3 h-3 ml-1"/></a></li>
         </ul>
       </div>
     </div>
