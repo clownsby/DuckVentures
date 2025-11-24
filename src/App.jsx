@@ -374,7 +374,7 @@ const MEDIA_DATA = {
       title: "StartUp", 
       author: "Gimlet Media", 
       desc: "A series about what it's really like to get a business off the ground.",
-      link: "https://open.spotify.com/show/5C669Dwd3Wl36YJ9oZk7x9",
+      link: "https://open.spotify.com/show/5CnDmMUG0S5bSSw612fs8C",
       image: "https://upload.wikimedia.org/wikipedia/en/6/6a/StartUp_Podcast_Logo.jpg"
     },
     { 
@@ -388,8 +388,8 @@ const MEDIA_DATA = {
       title: "Financial Wellness", 
       author: "UO Financial Aid", 
       desc: "Becoming Your Own Boss.",
-      link: "https://financialaid.uoregon.edu/financial_wellness",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/University_of_Oregon_logo.svg/640px-University_of_Oregon_logo.svg.png"
+      link: "https://financialaid.uoregon.edu/financial-wellness/financially-free-ducks",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/University_of_Oregon_logo.svg/2048px-University_of_Oregon_logo.svg.png"
     }
   ],
   videos: [
@@ -942,7 +942,7 @@ const LearningLibrary = () => {
                   rel="noopener noreferrer"
                   className="flex items-start bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#154733]/30 transition-all group"
                 >
-                  <div className="w-24 h-24 mr-4 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100 relative shadow-md">
+                  <div className="w-20 h-20 mr-4 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100 relative shadow-md">
                     <img 
                       src={pod.image}
                       alt={pod.title}
@@ -984,7 +984,7 @@ const LearningLibrary = () => {
                   rel="noopener noreferrer"
                   className="flex items-start bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-red-200 transition-all group"
                 >
-                  <div className="w-24 h-24 mr-4 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100 relative shadow-md">
+                  <div className="w-20 h-20 mr-4 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100 relative shadow-md">
                      <img 
                       src={vid.image}
                       alt={vid.title}
