@@ -164,11 +164,11 @@ const RESOURCES_DATA = {
       type: "Advising"
     },
     {
-      name: "Onward Eugene",
-      desc: "Nonprofit fueling economic prosperity. Incubators, mentorship, and pitch competitions.",
-      location: "Downtown Eugene",
-      link: "https://onwardeugene.org/",
-      type: "Accelerator"
+      name: "Collaborative Economic Development Oregon (CEDO)",
+      desc: "Fosters a strong regional ecosystem for innovation and entrepreneurship in Lane County.",
+      location: "Eugene / Springfield",
+      link: "https://www.collaborativeedo.org/innovate",
+      type: "Economic Dev"
     },
     {
       name: "Community LendingWorks",
@@ -374,7 +374,7 @@ const MEDIA_DATA = {
       title: "StartUp", 
       author: "Gimlet Media", 
       desc: "A series about what it's really like to get a business off the ground.",
-      link: "https://open.spotify.com/show/5CnDmMUG0S5bSSw612fs8C",
+      link: "https://open.spotify.com/show/5C669Dwd3Wl36YJ9oZk7x9",
       image: "https://upload.wikimedia.org/wikipedia/en/6/6a/StartUp_Podcast_Logo.jpg"
     },
     { 
