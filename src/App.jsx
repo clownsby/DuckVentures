@@ -181,7 +181,7 @@ const RESOURCES_DATA = {
       name: "RAIN Catalysts",
       desc: "Regional Accelerator & Innovation Network. Free mentorship and resources.",
       location: "Eugene/Springfield",
-      link: "https://rainincubators.org/",
+      link: "https://raincatalysts.org/",
       type: "Network"
     },
     {
@@ -1048,7 +1048,7 @@ const Footer = ({ setActiveTab }) => (
         <ul className="space-y-2 text-sm text-green-100/70">
           <li><a href="https://sos.oregon.gov/business/" target="_blank" rel="noopener noreferrer" className="hover:text-white flex items-center">Oregon Business Registry <ExternalLink className="w-3 h-3 ml-1"/></a></li>
           <li><a href="https://business.uoregon.edu/directory/lce" target="_blank" rel="noopener noreferrer" className="hover:text-white flex items-center">Lundquist Center <ExternalLink className="w-3 h-3 ml-1"/></a></li>
-          <li><a href="https://www.raincatalysts.org/" target="_blank" rel="noopener noreferrer" className="hover:text-white flex items-center">RAIN Catalysts <ExternalLink className="w-3 h-3 ml-1"/></a></li>
+          <li><a href="https://raincatalysts.org/" target="_blank" rel="noopener noreferrer" className="hover:text-white flex items-center">RAIN Catalysts <ExternalLink className="w-3 h-3 ml-1"/></a></li>
         </ul>
       </div>
     </div>
